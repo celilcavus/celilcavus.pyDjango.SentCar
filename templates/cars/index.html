@@ -1,0 +1,90 @@
+{% extends 'shared/_layout.html' %}
+{% load static %}
+
+
+{% block content %}
+    <!-- car section -->
+
+  <section class="car_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Better Way For Find Your Favourite Cars
+        </h2>
+        <p>
+          It is a long established fact that a reader will be distracted by the readable
+        </p>
+      </div>
+      <div class="car_container">
+            {% for x in favcar %}
+                <div class="box">
+                    <div class="img-box">
+                    <img src="{% static 'images/c-1.png' %}" alt="">
+                    </div>
+                    <div class="detail-box">
+                    <h5>
+                        {{x.title}}
+                    </h5>
+                    <p>
+                        {{x.description}}
+                    </p>
+                    <a href="{{x.id}}">
+                        Read More
+                    </a>
+                    </div>
+                </div>
+            {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- end car section -->
+
+   <!-- best section -->
+
+   <section class="best_section">
+    <div class="container">
+      <div class="book_now">
+        <div class="detail-box">
+          <h2>
+            Our Best Cars
+          </h2>
+          <p>
+            It is a long established fact that a reader will be distracted by the
+          </p>
+        </div>
+        <div class="btn-box">
+          <a href="">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end best section -->
+
+  <!-- rent section -->
+
+  <section class="rent_section layout_padding">
+    <div class="container">
+      <div class="rent_container">
+            {% for best in bestcar %}
+                <div class="box">
+                    <div class="img-box">
+                    <img src="{% static 'images/r-1.png' %}" alt="">
+                    </div>
+                    <div class="price">
+                    <a href="">
+                        {{best.price}} $
+                    </a>
+                    </div>
+                </div>
+            {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- end rent section -->
+{% endblock content %}
