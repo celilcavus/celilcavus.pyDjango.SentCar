@@ -1,36 +1,26 @@
 {% extends 'shared/_layout.html' %}
-{% load static %}
-
+{% load static %} 
 {% block content %}
- <!-- about section -->
-
-  <section class="about_section layout_padding2-top layout_padding-bottom ">
+<section class="about_section layout_padding2-top layout_padding-bottom ">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-7 px-0">
           <div class="img-box">
-            <img src="images/b-1.png" alt="">
+            <img src="{% static 'images/about-img.png' %}" alt="">
           </div>
         </div>
         <div class="col-md-4 col-lg-3">
           <div class="detail-box">
             <h2>
-                  {{findBlog.title}}
+              {{ab.title}}
             </h2>
             <p>
-              {{findBlog.description}}
+             {{ab.description}}
             </p>
-            <a href="">
-               {{findBlog.date}}
-            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- end about section -->
-
-    
-   
 {% endblock content %}
